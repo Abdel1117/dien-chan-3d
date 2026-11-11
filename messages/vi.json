@@ -37,7 +37,8 @@
     "views": "Đổi góc nhìn",
     "viewLeft": "Nghiêng trái",
     "viewFace": "Chính diện",
-    "viewRight": "Nghiêng phải"
+    "viewRight": "Nghiêng phải",
+    "credit": "Mô hình 3D “Male Head” của Alexander Antipov (Dessen), giấy phép CC BY 4.0. Đã chỉnh sửa: làm mịn, căn giữa, đổi tỷ lệ."
   },
   "Login": {
     "title": "Đăng nhập",

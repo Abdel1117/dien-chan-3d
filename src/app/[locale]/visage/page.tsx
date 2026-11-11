@@ -27,6 +27,9 @@ export default async function VisagePage({
       >
         {t("back")}
       </Link>
+      <p className="absolute bottom-1 left-2 max-w-[60%] text-[10px] leading-tight text-stone-500">
+        {t("credit")}
+      </p>
     </main>
   );
 }

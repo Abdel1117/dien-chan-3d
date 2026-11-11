@@ -37,7 +37,8 @@
     "views": "Changer de vue",
     "viewLeft": "Profil gauche",
     "viewFace": "Face",
-    "viewRight": "Profil droit"
+    "viewRight": "Profil droit",
+    "credit": "Modèle 3D « Male Head » par Alexander Antipov (Dessen), licence CC BY 4.0. Modifié : lissé, recentré, mis à l'échelle."
   },
   "Login": {
     "title": "Connexion",

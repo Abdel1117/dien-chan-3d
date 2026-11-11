@@ -37,7 +37,8 @@
     "views": "Change view",
     "viewLeft": "Left profile",
     "viewFace": "Front",
-    "viewRight": "Right profile"
+    "viewRight": "Right profile",
+    "credit": "3D model “Male Head” by Alexander Antipov (Dessen), licensed under CC BY 4.0. Modified: smoothed, recentred, rescaled."
   },
   "Login": {
     "title": "Sign in",
