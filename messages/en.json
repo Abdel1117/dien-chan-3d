@@ -1,0 +1,59 @@
+{
+  "Meta": {
+    "title": "Dien Chan 3D Face",
+    "description": "Dien Chan stimulation routines on a 3D face"
+  },
+  "Header": {
+    "brand": "Dien Chan 3D Face",
+    "nav": "Main navigation",
+    "home": "Home",
+    "face": "3D face",
+    "admin": "Administration",
+    "language": "Language",
+    "login": "Sign in",
+    "profile": "Profile",
+    "myProfile": "My profile",
+    "signOut": "Sign out"
+  },
+  "Home": {
+    "eyebrow": "Facial reflexology",
+    "title": "Explore Dien Chan on a 3D face",
+    "subtitle": "Locate the points on the face and follow stimulation routines step by step, organised by pain or condition.",
+    "cta": "Open the 3D face",
+    "featuresTitle": "How it works",
+    "feature1Title": "A 3D face",
+    "feature1Text": "Rotate the face, zoom and switch views: front, left profile, right profile.",
+    "feature2Title": "Guided routines",
+    "feature2Text": "Pick a pain or a condition: the routine appears and animates point by point on the face.",
+    "feature3Title": "A built-in timer",
+    "feature3Text": "Each step tells you how long or how many times to stimulate the point, with a signal at the end.",
+    "noticeLabel": "Important: ",
+    "notice": "Dien Chan is a complementary practice. It does not replace medical advice."
+  },
+  "Viewer": {
+    "title": "3D face — Dien Chan",
+    "back": "← Home",
+    "loading": "Loading the face…",
+    "views": "Change view",
+    "viewLeft": "Left profile",
+    "viewFace": "Front",
+    "viewRight": "Right profile"
+  },
+  "Login": {
+    "title": "Sign in",
+    "metaTitle": "Sign in — My account",
+    "intro": "Sign in to access your profile. Browsing routines does not require an account.",
+    "email": "Email address",
+    "password": "Password",
+    "submit": "Log in",
+    "error": "Incorrect email or password."
+  },
+  "Admin": {
+    "title": "Administration",
+    "signedIn": "You are signed in as an administrator."
+  },
+  "Profile": {
+    "title": "My profile",
+    "email": "Email address"
+  }
+}

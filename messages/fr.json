@@ -1,0 +1,59 @@
+{
+  "Meta": {
+    "title": "Visage 3D Dien Chan",
+    "description": "Parcours de stimulation Dien Chan sur un visage en 3D"
+  },
+  "Header": {
+    "brand": "Visage 3D Dien Chan",
+    "nav": "Navigation principale",
+    "home": "Accueil",
+    "face": "Visage 3D",
+    "admin": "Administration",
+    "language": "Langue",
+    "login": "Connexion",
+    "profile": "Profil",
+    "myProfile": "Mon profil",
+    "signOut": "Se déconnecter"
+  },
+  "Home": {
+    "eyebrow": "Réflexologie faciale",
+    "title": "Explorez le Dien Chan sur un visage en 3D",
+    "subtitle": "Repérez les points du visage et suivez des parcours de stimulation, étape par étape, classés par douleur ou par trouble.",
+    "cta": "Ouvrir le visage 3D",
+    "featuresTitle": "Fonctionnement",
+    "feature1Title": "Un visage en 3D",
+    "feature1Text": "Faites tourner le visage, zoomez et changez de vue : face, profil gauche, profil droit.",
+    "feature2Title": "Des parcours guidés",
+    "feature2Text": "Choisissez une douleur ou un trouble : le parcours s'affiche et s'anime point par point sur le visage.",
+    "feature3Title": "Un minuteur intégré",
+    "feature3Text": "Chaque étape indique combien de temps ou combien de fois stimuler le point, avec un signal à la fin.",
+    "noticeLabel": "Important : ",
+    "notice": "le Dien Chan est une pratique complémentaire. Elle ne remplace pas un avis médical."
+  },
+  "Viewer": {
+    "title": "Visage 3D — Dien Chan",
+    "back": "← Accueil",
+    "loading": "Chargement du visage…",
+    "views": "Changer de vue",
+    "viewLeft": "Profil gauche",
+    "viewFace": "Face",
+    "viewRight": "Profil droit"
+  },
+  "Login": {
+    "title": "Connexion",
+    "metaTitle": "Connexion — Mon compte",
+    "intro": "Connectez-vous pour accéder à votre profil. La consultation des parcours ne demande aucun compte.",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "error": "E-mail ou mot de passe incorrect."
+  },
+  "Admin": {
+    "title": "Administration",
+    "signedIn": "Vous êtes connecté en tant qu'administrateur."
+  },
+  "Profile": {
+    "title": "Mon profil",
+    "email": "Adresse e-mail"
+  }
+}

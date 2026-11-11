@@ -1,0 +1,59 @@
+{
+  "Meta": {
+    "title": "Khuôn mặt 3D Diện Chẩn",
+    "description": "Các liệu trình bấm huyệt Diện Chẩn trên khuôn mặt 3D"
+  },
+  "Header": {
+    "brand": "Khuôn mặt 3D Diện Chẩn",
+    "nav": "Điều hướng chính",
+    "home": "Trang chủ",
+    "face": "Khuôn mặt 3D",
+    "admin": "Quản trị",
+    "language": "Ngôn ngữ",
+    "login": "Đăng nhập",
+    "profile": "Hồ sơ",
+    "myProfile": "Hồ sơ của tôi",
+    "signOut": "Đăng xuất"
+  },
+  "Home": {
+    "eyebrow": "Phản xạ học khuôn mặt",
+    "title": "Khám phá Diện Chẩn trên khuôn mặt 3D",
+    "subtitle": "Xác định các huyệt trên khuôn mặt và làm theo các liệu trình kích thích từng bước, được phân loại theo cơn đau hoặc chứng bệnh.",
+    "cta": "Mở khuôn mặt 3D",
+    "featuresTitle": "Cách hoạt động",
+    "feature1Title": "Khuôn mặt 3D",
+    "feature1Text": "Xoay khuôn mặt, phóng to và đổi góc nhìn: chính diện, nghiêng trái, nghiêng phải.",
+    "feature2Title": "Liệu trình có hướng dẫn",
+    "feature2Text": "Chọn một cơn đau hoặc chứng bệnh: liệu trình hiển thị và chạy từng điểm trên khuôn mặt.",
+    "feature3Title": "Bộ hẹn giờ tích hợp",
+    "feature3Text": "Mỗi bước cho biết cần kích thích điểm trong bao lâu hoặc bao nhiêu lần, kèm tín hiệu khi kết thúc.",
+    "noticeLabel": "Lưu ý: ",
+    "notice": "Diện Chẩn là một phương pháp bổ trợ. Nó không thay thế lời khuyên của bác sĩ."
+  },
+  "Viewer": {
+    "title": "Khuôn mặt 3D — Diện Chẩn",
+    "back": "← Trang chủ",
+    "loading": "Đang tải khuôn mặt…",
+    "views": "Đổi góc nhìn",
+    "viewLeft": "Nghiêng trái",
+    "viewFace": "Chính diện",
+    "viewRight": "Nghiêng phải"
+  },
+  "Login": {
+    "title": "Đăng nhập",
+    "metaTitle": "Đăng nhập — Tài khoản",
+    "intro": "Đăng nhập để truy cập hồ sơ của bạn. Xem các liệu trình không cần tài khoản.",
+    "email": "Địa chỉ email",
+    "password": "Mật khẩu",
+    "submit": "Đăng nhập",
+    "error": "Email hoặc mật khẩu không đúng."
+  },
+  "Admin": {
+    "title": "Quản trị",
+    "signedIn": "Bạn đã đăng nhập với tư cách quản trị viên."
+  },
+  "Profile": {
+    "title": "Hồ sơ của tôi",
+    "email": "Địa chỉ email"
+  }
+}
