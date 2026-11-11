@@ -5,19 +5,36 @@ import { useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 
-export type ViewName = "face" | "left" | "right";
+export type ViewName = "face" | "left" | "right" | "back" | "top";
 
 /** Azimuth in radians. 0 = front (+Z). The person's left side is +X. */
-export const VIEW_AZIMUTH: Record<ViewName, number> = {
+export const VIEW_AZIMUTH: Record<ViewName, number | null> = {
   face: 0,
   left: Math.PI / 2,
   right: -Math.PI / 2,
+  back: Math.PI,
+  // The top view keeps the current azimuth: no spin, just tilt up.
+  top: null,
 };
 
-// Limits keep the camera in front of the head (no view from behind).
-const MAX_AZIMUTH = 1.75;
-const MIN_POLAR = 0.6;
+// The camera may go all around and above the head, but not below it.
+// MIN_POLAR is never exactly 0: OrbitControls gets unstable at the pole.
+const MIN_POLAR = 0.05;
 const MAX_POLAR = 2.2;
+
+/** Polar angle in radians. Pi/2 = level with the head, 0 = straight above. */
+const VIEW_POLAR: Record<ViewName, number> = {
+  face: Math.PI / 2,
+  left: Math.PI / 2,
+  right: Math.PI / 2,
+  back: Math.PI / 2,
+  top: MIN_POLAR,
+};
+
+/** Shortest signed angle from `from` to `to`, in (-PI, PI]. */
+function angleDelta(from: number, to: number) {
+  return Math.atan2(Math.sin(to - from), Math.cos(to - from));
+}
 
 type CameraRigProps = {
   view: ViewName;
@@ -27,10 +44,10 @@ type CameraRigProps = {
 
 export function CameraRig({ view, viewNonce }: CameraRigProps) {
   const controls = useRef<OrbitControlsImpl>(null);
-  const target = useRef<{ azimuth: number; polar: number } | null>(null);
+  const target = useRef<{ azimuth: number | null; polar: number } | null>(null);
 
   useEffect(() => {
-    target.current = { azimuth: VIEW_AZIMUTH[view], polar: Math.PI / 2 };
+    target.current = { azimuth: VIEW_AZIMUTH[view], polar: VIEW_POLAR[view] };
   }, [view, viewNonce]);
 
   useFrame((_, delta) => {
@@ -40,10 +57,11 @@ export function CameraRig({ view, viewNonce }: CameraRigProps) {
     const k = 1 - Math.exp(-delta * 8);
     const az = c.getAzimuthalAngle();
     const po = c.getPolarAngle();
-    c.setAzimuthalAngle(az + (t.azimuth - az) * k);
+    const dAz = t.azimuth === null ? 0 : angleDelta(az, t.azimuth);
+    c.setAzimuthalAngle(az + dAz * k);
     c.setPolarAngle(po + (t.polar - po) * k);
     c.update();
-    if (Math.abs(t.azimuth - az) < 0.002 && Math.abs(t.polar - po) < 0.002) {
+    if (Math.abs(dAz) < 0.002 && Math.abs(t.polar - po) < 0.002) {
       target.current = null;
     }
   });
@@ -56,8 +74,6 @@ export function CameraRig({ view, viewNonce }: CameraRigProps) {
       dampingFactor={0.08}
       minDistance={0.9}
       maxDistance={3}
-      minAzimuthAngle={-MAX_AZIMUTH}
-      maxAzimuthAngle={MAX_AZIMUTH}
       minPolarAngle={MIN_POLAR}
       maxPolarAngle={MAX_POLAR}
       // The user grabbing the model cancels any running view animation.

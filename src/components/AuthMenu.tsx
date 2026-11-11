@@ -24,7 +24,7 @@ export async function AuthMenu() {
       <summary className="cursor-pointer list-none rounded-full border border-stone-300 px-3 py-1 text-stone-800 hover:bg-stone-100">
         {t("profile")}
       </summary>
-      <div className="absolute right-0 z-10 mt-2 w-48 overflow-hidden rounded-xl border border-stone-200 bg-white py-1 shadow-lg">
+      <div className="z-10 mt-2 w-full overflow-hidden sm:absolute sm:right-0 sm:w-48 rounded-xl border border-stone-200 bg-white py-1 shadow-lg">
         <Link href="/profil" className={itemClass}>
           {t("myProfile")}
         </Link>

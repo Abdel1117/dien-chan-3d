@@ -13,7 +13,8 @@
     "login": "Đăng nhập",
     "profile": "Hồ sơ",
     "myProfile": "Hồ sơ của tôi",
-    "signOut": "Đăng xuất"
+    "signOut": "Đăng xuất",
+    "menu": "Menu"
   },
   "Home": {
     "eyebrow": "Phản xạ học khuôn mặt",
@@ -38,7 +39,9 @@
     "viewLeft": "Nghiêng trái",
     "viewFace": "Chính diện",
     "viewRight": "Nghiêng phải",
-    "credit": "Mô hình 3D “Male Head” của Alexander Antipov (Dessen), giấy phép CC BY 4.0. Đã chỉnh sửa: làm mịn, căn giữa, đổi tỷ lệ."
+    "credit": "Mô hình 3D “Male Head” của Alexander Antipov (Dessen), giấy phép CC BY 4.0. Đã chỉnh sửa: làm mịn, căn giữa, đổi tỷ lệ.",
+    "viewBack": "Phía sau",
+    "viewTop": "Phía trên"
   },
   "Login": {
     "title": "Đăng nhập",

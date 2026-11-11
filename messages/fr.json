@@ -13,7 +13,8 @@
     "login": "Connexion",
     "profile": "Profil",
     "myProfile": "Mon profil",
-    "signOut": "Se déconnecter"
+    "signOut": "Se déconnecter",
+    "menu": "Menu"
   },
   "Home": {
     "eyebrow": "Réflexologie faciale",
@@ -38,7 +39,9 @@
     "viewLeft": "Profil gauche",
     "viewFace": "Face",
     "viewRight": "Profil droit",
-    "credit": "Modèle 3D « Male Head » par Alexander Antipov (Dessen), licence CC BY 4.0. Modifié : lissé, recentré, mis à l'échelle."
+    "credit": "Modèle 3D « Male Head » par Alexander Antipov (Dessen), licence CC BY 4.0. Modifié : lissé, recentré, mis à l'échelle.",
+    "viewBack": "Arrière",
+    "viewTop": "Dessus"
   },
   "Login": {
     "title": "Connexion",

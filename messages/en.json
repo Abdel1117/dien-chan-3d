@@ -13,7 +13,8 @@
     "login": "Sign in",
     "profile": "Profile",
     "myProfile": "My profile",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "menu": "Menu"
   },
   "Home": {
     "eyebrow": "Facial reflexology",
@@ -38,7 +39,9 @@
     "viewLeft": "Left profile",
     "viewFace": "Front",
     "viewRight": "Right profile",
-    "credit": "3D model “Male Head” by Alexander Antipov (Dessen), licensed under CC BY 4.0. Modified: smoothed, recentred, rescaled."
+    "credit": "3D model “Male Head” by Alexander Antipov (Dessen), licensed under CC BY 4.0. Modified: smoothed, recentred, rescaled.",
+    "viewBack": "Back",
+    "viewTop": "Top"
   },
   "Login": {
     "title": "Sign in",
