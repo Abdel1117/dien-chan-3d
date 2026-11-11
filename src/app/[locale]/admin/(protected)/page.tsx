@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export default async function AdminHome({
@@ -15,6 +16,12 @@ export default async function AdminHome({
           {t("title")}
         </h1>
         <p className="mt-2 text-sm text-stone-600">{t("signedIn")}</p>
+        <Link
+          href="/admin/points"
+          className="mt-6 inline-block rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white hover:bg-stone-700"
+        >
+          {t("points")}
+        </Link>
       </main>
     </>
   );

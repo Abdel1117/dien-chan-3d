@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
+import type { Vec3 } from "./types";
 
 export type ViewName = "face" | "left" | "right" | "back" | "top";
 
@@ -40,15 +41,28 @@ type CameraRigProps = {
   view: ViewName;
   /** Changes on each button press so the same view can be re-selected. */
   viewNonce: number;
+  /** A spot on the head to turn the camera towards (model coordinates). */
+  focus?: Vec3 | null;
 };
 
-export function CameraRig({ view, viewNonce }: CameraRigProps) {
+export function CameraRig({ view, viewNonce, focus }: CameraRigProps) {
   const controls = useRef<OrbitControlsImpl>(null);
   const target = useRef<{ azimuth: number | null; polar: number } | null>(null);
 
   useEffect(() => {
     target.current = { azimuth: VIEW_AZIMUTH[view], polar: VIEW_POLAR[view] };
   }, [view, viewNonce]);
+
+  const [fx, fy, fz] = focus ?? [null, null, null];
+  useEffect(() => {
+    if (fx === null || fy === null || fz === null) return;
+    // Look at the spot from outside the head, without tilting too far.
+    const polar = Math.acos(fy / (Math.hypot(fx, fy, fz) || 1));
+    target.current = {
+      azimuth: Math.atan2(fx, fz),
+      polar: Math.min(1.8, Math.max(1.3, polar)),
+    };
+  }, [fx, fy, fz]);
 
   useFrame((_, delta) => {
     const c = controls.current;

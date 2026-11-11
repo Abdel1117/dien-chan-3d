@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import type { ComponentProps } from "react";
 import { useTranslations } from "next-intl";
 
 // The 3D scene only runs in the browser.
@@ -18,6 +19,6 @@ const HeadViewer = dynamic(() => import("./HeadViewer"), {
   loading: () => <Loading />,
 });
 
-export function HeadViewerClient() {
-  return <HeadViewer />;
+export function HeadViewerClient(props: ComponentProps<typeof HeadViewer>) {
+  return <HeadViewer {...props} />;
 }

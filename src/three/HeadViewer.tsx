@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Canvas } from "@react-three/fiber";
-import { useProgress } from "@react-three/drei";
 import { CameraRig, type ViewName } from "./CameraRig";
 import { HeadModel } from "./HeadModel";
+import { PointMarkers } from "./PointMarkers";
+import type { SurfaceHit, Vec3, ViewerPoint } from "./types";
 
 const VIEWS: { name: ViewName; labelKey: string }[] = [
   { name: "left", labelKey: "viewLeft" },
@@ -15,16 +16,43 @@ const VIEWS: { name: ViewName; labelKey: string }[] = [
   { name: "top", labelKey: "viewTop" },
 ];
 
-export default function HeadViewer() {
+export type HeadViewerProps = {
+  points?: ViewerPoint[];
+  selectedId?: string | null;
+  /** A point being placed, not saved yet. */
+  draft?: ViewerPoint | null;
+  onSelectPoint?: (id: string) => void;
+  /** When set, clicking the face reports the spot (used to place points). */
+  onPickSurface?: (hit: SurfaceHit) => void;
+  /** Turns the camera towards this spot when it changes. */
+  focus?: Vec3 | null;
+};
+
+/**
+ * Rendered next to the model inside the same Suspense boundary: it only
+ * mounts once the model has finished loading.
+ */
+function ReadySignal({ onReady }: { onReady: () => void }) {
+  useEffect(onReady, [onReady]);
+  return null;
+}
+
+export default function HeadViewer({
+  points = [],
+  selectedId,
+  draft,
+  onSelectPoint,
+  onPickSurface,
+  focus,
+}: HeadViewerProps) {
   const t = useTranslations("Viewer");
   const [view, setView] = useState<ViewName>("face");
   const [nonce, setNonce] = useState(0);
-  // 100 once the head model is fully loaded.
-  const { progress } = useProgress();
-  const ready = progress >= 100;
+  // Becomes true once the head model has actually been rendered.
+  const [ready, setReady] = useState(false);
 
   return (
-    <div className="relative h-full w-full touch-none bg-stone-100">
+    <div className={`relative h-full w-full touch-none bg-stone-100 ${onPickSurface ? "cursor-crosshair" : ""}`}>
       <Canvas
         camera={{ position: [0, 0, 2.2], fov: 35, near: 0.1, far: 20 }}
         dpr={[1, 2]}
@@ -32,8 +60,18 @@ export default function HeadViewer() {
         <ambientLight intensity={0.9} />
         <directionalLight position={[2, 2, 3]} intensity={1.1} />
         <directionalLight position={[-3, 1, 1]} intensity={0.4} />
-        <HeadModel />
-        <CameraRig view={view} viewNonce={nonce} />
+        <Suspense fallback={null}>
+          <HeadModel onPick={onPickSurface} />
+          <ReadySignal onReady={() => setReady(true)} />
+        </Suspense>
+        <PointMarkers
+          points={points}
+          selectedId={selectedId}
+          draft={draft}
+          clickable={!onPickSurface}
+          onSelect={onSelectPoint}
+        />
+        <CameraRig view={view} viewNonce={nonce} focus={focus} />
       </Canvas>
 
       {!ready && (
