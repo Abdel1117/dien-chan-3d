@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+ * Home page entrance. The hero texts start hidden and are revealed by
+ * anime.js (LandingMotion). If the script never runs, they show up by
+ * themselves after 3 s. With reduced motion nothing is ever hidden.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .landing [data-enter],
+  .landing [data-enter-title] {
+    opacity: 0;
+    animation: landing-reveal 0s linear 3s forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@keyframes landing-reveal {
+  to {
+    opacity: 1;
+  }
+}
+
+/* A link whose underline draws from the left on hover. */
+.link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 0.3s ease;
+}
+
+.link-draw:hover,
+.link-draw:focus-visible {
+  background-size: 100% 1px;
+}
