@@ -136,7 +136,9 @@
     "legendCurrent": "Point en cours",
     "legendNext": "Point suivant",
     "legendOther": "Autres points",
-    "perSide": "{amount} par côté"
+    "perSide": "{amount} par côté",
+    "steps": "Étapes",
+    "closePanel": "Fermer le panneau"
   },
   "Player": {
     "title": "Minuteur",

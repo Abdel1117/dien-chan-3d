@@ -136,7 +136,9 @@
     "legendCurrent": "Current point",
     "legendNext": "Next point",
     "legendOther": "Other points",
-    "perSide": "{amount} per side"
+    "perSide": "{amount} per side",
+    "steps": "Steps",
+    "closePanel": "Close the panel"
   },
   "Player": {
     "title": "Timer",

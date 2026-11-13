@@ -136,7 +136,9 @@
     "legendCurrent": "Điểm hiện tại",
     "legendNext": "Điểm tiếp theo",
     "legendOther": "Các điểm khác",
-    "perSide": "{amount} mỗi bên"
+    "perSide": "{amount} mỗi bên",
+    "steps": "Các bước",
+    "closePanel": "Đóng bảng"
   },
   "Player": {
     "title": "Đồng hồ",

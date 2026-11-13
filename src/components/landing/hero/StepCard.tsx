@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import type { Etape } from "@/lib/supabase/queries";
-import { useDosageLabel } from "../hooks/useDosageLabel";
+import { useDosageLabel } from "@/hooks/useDosageLabel";
 import { useRingProgress } from "../hooks/useRingProgress";
 
 // The preview moves on faster than a real session: one step every 3.2 s.
