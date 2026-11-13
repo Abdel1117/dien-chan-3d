@@ -156,5 +156,129 @@
     "previous": "Trước",
     "side_gauche": "Bên trái",
     "side_droite": "Bên phải"
+  },
+  "Footer": {
+    "nav": "Thông tin pháp lý",
+    "legal": "Thông tin pháp lý",
+    "privacy": "Chính sách bảo mật"
+  },
+  "Cookies": {
+    "label": "Thông tin về cookie",
+    "text": "Trang này chỉ dùng các cookie cần thiết để hoạt động: đăng nhập và lựa chọn ngôn ngữ. Không quảng cáo, không đo lường lượt truy cập.",
+    "more": "Tìm hiểu thêm",
+    "accept": "Tôi đã hiểu"
+  },
+  "Legal": {
+    "title": "Thông tin pháp lý",
+    "description": "Đơn vị xuất bản, đơn vị lưu trữ và điều kiện sử dụng trang.",
+    "updated": "Cập nhật lần cuối: {date}",
+    "sections": [
+      {
+        "title": "Đơn vị xuất bản",
+        "body": [
+          "Trang {siteName} do một cá nhân xuất bản, không vì mục đích nghề nghiệp.",
+          "Theo điều 6-III-2 của luật Pháp ngày 21 tháng 6 năm 2004 về niềm tin trong nền kinh tế số, người xuất bản đã chọn không công bố danh tính. Thông tin liên hệ của người xuất bản đã được cung cấp cho đơn vị lưu trữ trang.",
+          "Liên hệ: {contactEmail}."
+        ]
+      },
+      {
+        "title": "Lưu trữ",
+        "body": [
+          "Trang được lưu trữ bởi {hostName}, {hostAddress} ({hostWebsite}).",
+          "Dữ liệu của trang (liệu trình, huyệt, tài khoản) được lưu bởi {databaseName}, {databaseAddress} ({databaseWebsite})."
+        ]
+      },
+      {
+        "title": "Sở hữu trí tuệ",
+        "body": [
+          "Trừ khi có ghi chú khác, các văn bản, liệu trình và mã nguồn của trang thuộc về đơn vị xuất bản. Mọi sao chép cần được đồng ý trước.",
+          "Mô hình khuôn mặt 3D là “Male Head” của Alexander Antipov (Dessen), theo giấy phép Creative Commons Attribution 4.0 (CC BY 4.0). Mô hình đã được chỉnh sửa: làm mịn, căn giữa và đổi tỷ lệ.",
+          "Số huyệt theo đồ hình của Bùi Quốc Châu, người sáng lập Diện Chẩn."
+        ]
+      },
+      {
+        "title": "Lưu ý về sức khỏe",
+        "body": [
+          "Diện Chẩn là một phương pháp bổ trợ. Thông tin trên trang chỉ mang tính tham khảo: không phải là chẩn đoán, điều trị hay lời khuyên y tế.",
+          "Thông tin này không thay thế việc khám với chuyên gia y tế. Nếu có nghi ngờ, đau kéo dài hoặc trường hợp khẩn cấp, hãy đi khám bác sĩ. Không tự ý ngừng điều trị y tế khi chưa có ý kiến của bác sĩ."
+        ]
+      },
+      {
+        "title": "Trách nhiệm",
+        "body": [
+          "Đơn vị xuất bản cố gắng cung cấp thông tin chính xác nhưng không thể bảo đảm đầy đủ. Bạn tự chịu trách nhiệm khi sử dụng trang và các liệu trình.",
+          "Đơn vị xuất bản không chịu trách nhiệm khi trang bị gián đoạn hoặc về thiệt hại liên quan đến việc sử dụng trang."
+        ]
+      },
+      {
+        "title": "Dữ liệu cá nhân",
+        "body": [
+          "Việc xử lý dữ liệu của bạn và việc dùng cookie được mô tả trong chính sách bảo mật, có liên kết ở cuối trang."
+        ]
+      }
+    ]
+  },
+  "Privacy": {
+    "title": "Chính sách bảo mật",
+    "description": "Dữ liệu được thu thập, cookie được sử dụng và quyền của người truy cập.",
+    "updated": "Cập nhật lần cuối: {date}",
+    "sections": [
+      {
+        "title": "Bên chịu trách nhiệm xử lý dữ liệu",
+        "body": [
+          "Bên chịu trách nhiệm xử lý dữ liệu là người xuất bản trang {siteName}. Liên hệ: {contactEmail}."
+        ]
+      },
+      {
+        "title": "Dữ liệu được thu thập",
+        "body": [
+          "Xem trang: không cần tài khoản và không yêu cầu dữ liệu cá nhân nào để khám phá khuôn mặt 3D và làm theo một liệu trình.",
+          "Tài khoản: nếu bạn có tài khoản, địa chỉ e-mail và mật khẩu của bạn được lưu lại. Mật khẩu được lưu dưới dạng mã hóa; đơn vị xuất bản không thể đọc được.",
+          "Dữ liệu kỹ thuật: như mọi trang web, đơn vị lưu trữ ghi nhật ký kết nối (địa chỉ IP, ngày giờ, trang được yêu cầu) để bảo đảm an toàn và hoạt động của dịch vụ."
+        ]
+      },
+      {
+        "title": "Mục đích",
+        "body": [
+          "Các dữ liệu này chỉ dùng để đăng nhập tài khoản, hiển thị trang theo ngôn ngữ của bạn và bảo đảm an toàn. Dữ liệu không bị bán và không dùng cho quảng cáo."
+        ]
+      },
+      {
+        "title": "Cookie và lưu trữ cục bộ",
+        "body": [
+          "Trang chỉ dùng các cookie cần thiết để hoạt động:",
+          "— một cookie phiên, chỉ được đặt khi bạn đăng nhập, để giữ trạng thái đăng nhập;",
+          "— một cookie ngôn ngữ, được đặt khi bạn đổi ngôn ngữ, để ghi nhớ lựa chọn;",
+          "— một thông tin lưu trong trình duyệt khi bạn đóng thanh thông báo, để không hiển thị lại.",
+          "Trang không dùng cookie quảng cáo và không dùng công cụ đo lường lượt truy cập. Vì vậy trang không hỏi sự đồng ý của bạn: pháp luật không yêu cầu điều đó với các cookie thật sự cần thiết."
+        ]
+      },
+      {
+        "title": "Bên nhận dữ liệu",
+        "body": [
+          "Dữ liệu được xử lý bởi đơn vị xuất bản và các nhà cung cấp kỹ thuật: {hostName} cho việc lưu trữ và {databaseName} cho cơ sở dữ liệu và đăng nhập.",
+          "Các nhà cung cấp này có thể xử lý dữ liệu ngoài Liên minh châu Âu. Việc chuyển dữ liệu được điều chỉnh bởi các điều khoản hợp đồng mẫu của Ủy ban châu Âu."
+        ]
+      },
+      {
+        "title": "Thời gian lưu giữ",
+        "body": [
+          "Dữ liệu tài khoản được giữ trong suốt thời gian tài khoản tồn tại, sau đó bị xóa. Nhật ký kết nối được đơn vị lưu trữ giữ theo thời hạn trong điều khoản của họ."
+        ]
+      },
+      {
+        "title": "Quyền của bạn",
+        "body": [
+          "Bạn có thể yêu cầu truy cập, chỉnh sửa, xóa hoặc chuyển dữ liệu của mình, và yêu cầu hạn chế hoặc phản đối việc xử lý.",
+          "Để thực hiện các quyền này, hãy viết thư đến {contactEmail}. Nếu cho rằng quyền của mình không được tôn trọng, bạn có thể khiếu nại lên cơ quan bảo vệ dữ liệu của Pháp, CNIL (www.cnil.fr)."
+        ]
+      },
+      {
+        "title": "Thay đổi chính sách",
+        "body": [
+          "Chính sách này có thể được cập nhật, chẳng hạn khi trang thay đổi. Ngày cập nhật lần cuối được ghi ở đầu trang."
+        ]
+      }
+    ]
   }
 }

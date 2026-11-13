@@ -5,7 +5,7 @@ import { LandingMotion } from "@/components/landing/motion/LandingMotion";
 import { ClosingSection } from "@/components/landing/sections/ClosingSection";
 import { HeroSection } from "@/components/landing/sections/HeroSection";
 import { HowItWorksSection } from "@/components/landing/sections/HowItWorksSection";
-import { LandingFooter } from "@/components/landing/sections/LandingFooter";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SessionSection } from "@/components/landing/sections/SessionSection";
 
 export default async function Home({ params }: PageProps<"/[locale]">) {
@@ -22,7 +22,7 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
           <SessionSection />
           <ClosingSection />
         </main>
-        <LandingFooter />
+        <SiteFooter />
       </LandingMotion>
     </div>
   );

@@ -156,5 +156,129 @@
     "previous": "Previous",
     "side_gauche": "Left side",
     "side_droite": "Right side"
+  },
+  "Footer": {
+    "nav": "Legal information",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy"
+  },
+  "Cookies": {
+    "label": "Cookie information",
+    "text": "This site only uses the cookies it needs to work: sign-in and language choice. No advertising, no audience measurement.",
+    "more": "Learn more",
+    "accept": "Got it"
+  },
+  "Legal": {
+    "title": "Legal notice",
+    "description": "Publisher, host and terms of use of the site.",
+    "updated": "Last updated: {date}",
+    "sections": [
+      {
+        "title": "Publisher",
+        "body": [
+          "The site {siteName} is published by a private individual, on a non-professional basis.",
+          "In accordance with article 6-III-2 of the French law of 21 June 2004 on confidence in the digital economy, the publisher has chosen not to publish their identity. Their details have been given to the site's host.",
+          "Contact: {contactEmail}."
+        ]
+      },
+      {
+        "title": "Hosting",
+        "body": [
+          "The site is hosted by {hostName}, {hostAddress} ({hostWebsite}).",
+          "The site's data (routines, points, accounts) is stored by {databaseName}, {databaseAddress} ({databaseWebsite})."
+        ]
+      },
+      {
+        "title": "Intellectual property",
+        "body": [
+          "Unless stated otherwise, the texts, the routines and the code of the site belong to the publisher. Any reproduction requires prior permission.",
+          "The 3D face model is \"Male Head\" by Alexander Antipov (Dessen), under the Creative Commons Attribution 4.0 licence (CC BY 4.0). It was modified: smoothed, recentred and rescaled.",
+          "Point numbering follows the chart of Bùi Quốc Châu, founder of Dien Chan."
+        ]
+      },
+      {
+        "title": "Health notice",
+        "body": [
+          "Dien Chan is a complementary practice. The information on this site is given for guidance only: it is not a diagnosis, a treatment or medical advice.",
+          "It does not replace seeing a health professional. If in doubt, in case of lasting pain or in an emergency, see a doctor. Never stop a medical treatment without a doctor's advice."
+        ]
+      },
+      {
+        "title": "Liability",
+        "body": [
+          "The publisher strives to provide accurate information but cannot guarantee that it is complete. You use the site and its routines under your own responsibility.",
+          "The publisher cannot be held liable for an interruption of the site or for damage related to its use."
+        ]
+      },
+      {
+        "title": "Personal data",
+        "body": [
+          "How your data is processed and how cookies are used is described in the privacy policy, linked in the footer."
+        ]
+      }
+    ]
+  },
+  "Privacy": {
+    "title": "Privacy policy",
+    "description": "Data collected, cookies used and visitors' rights.",
+    "updated": "Last updated: {date}",
+    "sections": [
+      {
+        "title": "Data controller",
+        "body": [
+          "The data controller is the publisher of the site {siteName}. Contact: {contactEmail}."
+        ]
+      },
+      {
+        "title": "Data collected",
+        "body": [
+          "Browsing the site: no account is needed and no personal data is requested to explore the 3D face and follow a routine.",
+          "Account: if you have an account, your email address and your password are stored. The password is stored in encrypted form; the publisher cannot read it.",
+          "Technical data: like any site, the host keeps connection logs (IP address, date, page requested) to keep the service secure and running."
+        ]
+      },
+      {
+        "title": "Purposes",
+        "body": [
+          "This data is only used to sign you in to your account, to show the site in your language and to keep it secure. It is never sold or used for advertising."
+        ]
+      },
+      {
+        "title": "Cookies and local storage",
+        "body": [
+          "The site only uses cookies it needs to work:",
+          "— a session cookie, set only when you sign in to an account, to keep you signed in;",
+          "— a language cookie, set when you change language, to remember your choice;",
+          "— a note saved in your browser when you close the information banner, so that it is not shown again.",
+          "The site uses no advertising cookie and no audience measurement tool. This is why it does not ask for your consent: the law does not require it for strictly necessary cookies."
+        ]
+      },
+      {
+        "title": "Who receives the data",
+        "body": [
+          "The data is processed by the publisher and its technical providers: {hostName} for hosting and {databaseName} for the database and sign-in.",
+          "These providers may process data outside the European Union. Such transfers are covered by the European Commission's standard contractual clauses."
+        ]
+      },
+      {
+        "title": "Retention",
+        "body": [
+          "Account data is kept as long as the account exists, then deleted. Connection logs are kept by the host for the period set in its own terms."
+        ]
+      },
+      {
+        "title": "Your rights",
+        "body": [
+          "You can ask to access your data, to have it corrected, erased or exported, and ask to restrict the processing or object to it.",
+          "To exercise these rights, write to {contactEmail}. If you believe your rights are not respected, you can lodge a complaint with the French data protection authority, the CNIL (www.cnil.fr)."
+        ]
+      },
+      {
+        "title": "Changes to this policy",
+        "body": [
+          "This policy may be updated, for instance when the site changes. The date of the last update is shown at the top of the page."
+        ]
+      }
+    ]
   }
 }

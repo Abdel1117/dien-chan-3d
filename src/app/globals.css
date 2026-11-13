@@ -46,3 +46,17 @@ html {
 .link-draw:focus-visible {
   background-size: 100% 1px;
 }
+
+/* The cookie notice slides up once, when it appears. */
+@media (prefers-reduced-motion: no-preference) {
+  .cookie-banner {
+    animation: cookie-banner-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+  }
+}
+
+@keyframes cookie-banner-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}

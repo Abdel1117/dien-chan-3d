@@ -1,76 +1,76 @@
 # À faire demain
 
-Objectif : valider la phase 3 (base de données) pour pouvoir passer à la phase 4 (connexion et éditeur de points).
+Mis à jour le 11 novembre 2026, en fin de séance.
 
-## 1. Créer le projet Supabase (≈ 10 min)
+## Où on en est
 
-1. Va sur https://supabase.com et crée un compte (ou connecte-toi).
-2. **New project** : choisis un nom (ex. `dien-chan-3d`), un mot de passe de base de données (garde-le dans un gestionnaire de mots de passe) et la région la plus proche (ex. Paris / Frankfurt).
-3. Attends que le projet soit prêt (1 à 2 minutes).
+Fait et poussé sur `origin/dev` (dernier commit : `cc531b7`) :
 
-## 2. Récupérer les clés
+- Base Supabase (schéma, sécurité RLS), compte administrateur.
+- Connexion, session (JWT + refresh token dans `src/proxy.ts`), pages admin protégées, page profil.
+- En-tête responsive avec menu burger sur mobile.
+- Tête 3D (`public/models/head.glb`, crédits CC BY), vues Face / Profils / Arrière / Dessus.
+- Éditeur de points : `/admin/points` (clic sur le visage, numéro Bùi Quốc Châu, noms fr/en/vi).
+- Page `/visage` : liste des parcours, étapes, point en cours en rouge, point suivant en orange.
+- Minuteur : décompte ou répétitions, pauses, tours, Précédent / Suivant, sons de début et de fin, écran maintenu allumé. Les étapes « des deux côtés » se jouent gauche puis droite.
+- Parcours réel « Bộ thăng » inséré en base (`supabase/data/bo-thang.sql`).
+- Le build de production passe (`npm run build`).
 
-Dans le projet : **Project Settings > API** (ou le bouton **Connect**).
+## 1. Chantier principal : l'éditeur de parcours
 
-- Copie **Project URL**.
-- Copie la clé **anon / publishable**.
-- Ne copie **jamais** la clé `service_role` dans le projet.
+Aujourd'hui, un parcours ne peut être créé qu'en SQL. À construire dans `src/app/[locale]/admin/(protected)/parcours/` :
 
-## 3. Remplir le fichier `.env`
+- Liste des parcours (publiés et brouillons), bouton « Nouveau parcours ».
+- Fiche du parcours : titre, description et avertissement en fr/en/vi, catégorie (douleur / trouble), nombre de tours, slug.
+- Étapes : choisir un point existant, ordre (monter / descendre), côté (gauche, droite, les deux, central), durée ou répétitions avec cadence, pause après l'étape.
+- Publier / repasser en brouillon, supprimer.
+- Technique fixée à « pression » (décision prise), pas de champ à l'écran.
+- Lien depuis `/admin`, à côté de « Gérer les points ».
 
-À la racine du projet :
+Les fonctions d'écriture existent déjà dans `src/lib/supabase/queries.ts` : `saveParcours`, `saveEtape`, `deleteParcours`, `deleteEtape`. Il manque l'interface.
 
-```bash
-cp .env.example .env
-```
+## 2. À faire par toi (hors code)
 
-Puis renseigne :
+- **Vérifier les 10 points du « Bộ thăng »** contre ta carte de référence et les corriger dans `/admin/points`. Leurs positions sont approximatives (calculées d'après des descriptions trouvées en ligne).
+- **Écouter les sons** du minuteur et tester sur téléphone (son, écran qui reste allumé, menu burger, panneau des parcours).
+- **Décider pour les points des deux côtés** : gauche puis droite (en place aujourd'hui) ou les deux en même temps.
+- **Relire l'avertissement médical** du « Bộ thăng » (contre-indications reprises de sites non médicaux).
+- **Faire relire le vietnamien** (`messages/vi.json` et les textes du parcours) par une personne qui parle la langue.
 
-```text
-NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=ta-cle-publishable
-```
+## 3. Nettoyer les données de test
 
-Le fichier `.env` est ignoré par git : il ne sera pas publié.
-
-## 4. Appliquer la base de données
-
-Dans la console Supabase : **SQL Editor > New query**.
-
-1. Colle le contenu de `supabase/migrations/20261110000000_schema.sql` et clique sur **Run**. Résultat attendu : « Success ».
-2. Nouvelle requête : colle le contenu de `supabase/seed.sql` et **Run**. Ce sont des données **fictives** de test.
-3. Vérifie dans **Table Editor** : tu dois voir les tables `points`, `parcours`, `parcours_etapes`, `admins` et les trois tables `*_traductions`.
-
-## 5. Créer ton compte administrateur
-
-1. **Authentication > Users > Add user > Create new user** : saisis ton e-mail et un mot de passe. Coche **Auto Confirm User**.
-2. Copie l'**UID** de l'utilisateur créé.
-3. Dans **SQL Editor**, exécute :
+Quand le « Bộ thăng » est vérifié, dans Supabase > SQL Editor :
 
 ```sql
-insert into public.admins (user_id) values ('COLLE-ICI-TON-UID');
+delete from public.parcours where slug in ('parcours-de-demonstration', 'brouillon-de-demonstration');
+delete from public.points where numero in ('T1', 'T2', 'T3');
 ```
 
-## 6. Me prévenir
+Ton point 26 est conservé.
 
-Reviens me dire : « Supabase est prêt ». Je testerai alors :
+## 4. Mise en production sur Vercel
 
-- qu'un visiteur anonyme lit les parcours publiés et ne peut rien écrire ;
-- que ton compte administrateur peut écrire.
+1. https://vercel.com > connexion avec GitHub > **Add New > Project** > importer `dien-chan-3d`.
+2. Ajouter les deux variables d'environnement (mêmes valeurs que `.env`) :
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+3. **Deploy**. Chaque `git push` sur `dev` redéploie ensuite le site.
 
-Ensuite on passe à la phase 4.
+Côté Supabase, avant d'ouvrir au public :
 
-## 7. En parallèle (facultatif)
+- **Authentication > Sign In / Providers > Email** : décocher « Allow new users to sign up ».
+- **Authentication > URL Configuration** : mettre l'adresse Vercel dans « Site URL ».
+- Vérifier que le mot de passe administrateur est solide.
 
-- **Modèle 3D :** une fois le téléchargement fini, vérifie qu'il respecte : 20 000 triangles maximum, moins de 2 Mo, origine au centre de la tête, axe Y vers le haut, visage vers +Z, hauteur de tête = 1. Si ce n'est pas le cas, demande-moi le script Python pour Blender. Dépose le fichier final dans `public/models/head.glb`.
-- **Relecture de la traduction vietnamienne :** fais relire `messages/vi.json` (et le texte du seed) par une personne qui parle la langue.
-- **Questions ouvertes du plan** (à trancher avant la phase 4) :
-  - un seul administrateur ou plusieurs praticiens ?
-  - la consultation reste-t-elle publique ?
-  - quelle numérotation et quelles cartes de référence pour placer les points ?
-  - quelles techniques de stimulation proposer (pression, roulement, autre) ?
+## 5. Idées pour plus tard
+
+- Sur la dernière étape d'un tour, montrer en orange le premier point du tour suivant.
+- Message d'erreur si `head.glb` ne se charge pas (aujourd'hui : « Chargement… » sans fin).
+- Page d'inscription, si des utilisateurs non administrateurs doivent avoir un compte.
+- Remplacer `THREE.Clock` (avertissement de dépréciation dans la console, sans conséquence).
 
 ## Rappels
 
-- Ne partage jamais le mot de passe de la base ni la clé `service_role`.
-- Supabase gratuit met le projet en pause après environ une semaine sans activité : si le site ne charge plus les données, relance-le depuis la console.
+- Ne jamais mettre la clé `sb_secret_` / `service_role` dans le projet ni dans Vercel.
+- Supabase gratuit met le projet en pause après environ une semaine sans activité : le relancer depuis la console si les parcours ne s'affichent plus.
+- Si tu changes de modèle de tête : relancer `scripts/prepare-head.py`, incrémenter `HEAD_MODEL_VERSION` dans `src/lib/model.ts`, et replacer tous les points.
